@@ -13,10 +13,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        
+      - uses: actions/upload-artifact@v2
+        with:
+          name: jmeter-scripts
+          path: .
 
       - name: Run JMeter Tests
         uses: rbhadti94/apache-jmeter-action@v0.3.1
         with:
-          testFilePath: ./sample_test.jmx
+          testFilePath: sample_test.jmx
           outputReportsFolder: reports/
           args: "--loglevel INFO -p PeakHourLoad.properties"
