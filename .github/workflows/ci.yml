@@ -22,6 +22,6 @@ jobs:
       - name: Run JMeter Tests
         uses: rbhadti94/apache-jmeter-action@v0.3.1
         with:
-          testFilePath: sample_test.jmx
+          testFilePath: k6-performance-test.jmx
           outputReportsFolder: reports/
           args: "--loglevel INFO -p PeakHourLoad.properties"
